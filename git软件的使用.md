@@ -1,26 +1,20 @@
 # git软件的使用
 
-## 四、从GitHub向本地down文件
+## 从GitHub向本地down文件
 
-方法一：
+### 方法一：
 
-步骤1：获取GitHub中的代码仓库的SSH
-
-步骤2：在本地打开一个文件夹，点击右键，选择Git Bash Here
-
-步骤3：在指令中输入：”git clone ‘代码仓库的SSH地址’“命令行，达到100%，下载成功
-
+步骤1：获取GitHub中的代码仓库的SSH  
+步骤2：在本地打开一个文件夹，点击右键，选择Git Bash Here  
+步骤3：在指令中输入：”git clone ‘代码仓库的SSH地址’“命令行，达到100%，下载成功  
 如: git clone git@github.com:book666/book1.git
 
-方法二：
+### 方法二：
 
-步骤1：在本地一个文件夹, 点击右键，打开Git Gui，点击Clone Existing Repository
-
-步骤2：输入Source Location 和 Target Directory，点击ok；
-
-Source Location 形如: https://github.com/abc/cde.git 或 git@github.com:abc/cde.git
-
-Target Directory 形如: cde
+步骤1：在本地一个文件夹, 点击右键，打开Git Gui，点击Clone Existing Repository  
+步骤2：输入Source Location 和 Target Directory，点击ok；  
+Source Location 形如: https://github.com/abc/cde.git 或 git@github.com:abc/cde.git  
+Target Directory 形如: cde  
 
 注意：Target Directory选则的文件夹是未创建的，工具会自动创建。直接输入"abc",则在本地当前文件夹下创建"abc"目录.
 
