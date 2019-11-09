@@ -1,0 +1,156 @@
+# RSA私钥和公钥文件格式
+
+### PKCS #1
+私钥文件格式
+```
+-----BEGIN RSA PRIVATE KEY-----
+<base64b编码的二进制>
+-----END RSA PRIVATE KEY-----
+```
+公钥文件格式
+```
+-----BEGIN RSA PUBLIC KEY-----
+<base64b编码的二进制>
+-----END RSA PUBLIC KEY-----
+```
+
+### PKCS #8
+私钥文件格式
+```
+-----BEGIN PRIVATE KEY-----
+<base64b编码的二进制>
+-----END PRIVATE KEY-----
+```
+公钥文件格式
+```
+-----BEGIN PUBLIC KEY-----
+<base64b编码的二进制>
+-----END PUBLIC KEY-----
+```
+
+### PKCS #12
+
+### DER
+
+### PEM  
+Base64 encoded DER certificates or keys, with additional header and footer lines.
+
+The PEM private key format uses the header and footer lines:  
+```
+-----BEGIN RSA PRIVATE KEY----- 
+-----END RSA PRIVATE KEY-----
+```
+The PEM public key format uses the header and footer lines: 
+```
+-----BEGIN PUBLIC KEY----- 
+-----END PUBLIC KEY-----
+```
+The PEM certificate uses the header and footer lines:
+```
+-----BEGIN CERTIFICATE----- 
+-----END CERTIFICATE-----
+```
+
+## 例如
+### PKCS #1 （无密码）
+public.key
+```
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCJ04gg+5fs0gp7gNGq2n0FZqiV
+GVyAosq4M71WbctSHFo7qyckr1JbQ2z6nuOYLy/rRPkEqmwAsFdmL7Cr4L+B3CB5
+sMRaCaATkCljKJAPnsHuusDtbZfYOKzjX5rsJVwWqReA6I0Vhr7Mt6hquXeRmij/
+D11SgEDVtV77nkAx8wIDAQAB
+-----END PUBLIC KEY-----
+```
+private.key
+```
+-----BEGIN RSA PRIVATE KEY-----
+MIICWwIBAAKBgQCJ04gg+5fs0gp7gNGq2n0FZqiVGVyAosq4M71WbctSHFo7qyck
+r1JbQ2z6nuOYLy/rRPkEqmwAsFdmL7Cr4L+B3CB5sMRaCaATkCljKJAPnsHuusDt
+bZfYOKzjX5rsJVwWqReA6I0Vhr7Mt6hquXeRmij/D11SgEDVtV77nkAx8wIDAQAB
+AoGABSjnqEBzBBkq7ku4zbonQwwAVLCh32j4yOOa+4DZw0WvdRtnuD5eCW+hRVKs
+d5aQpzCqV+vfZjkz1G4FobGkybP9zuZb4HFU/w0mS8tuL53iyIzJI9u55zz9FLLH
+X02XEM+wa3ONS/09pTnIV0LcSXO3czDk6EYdqO/yQ2M5x4kCQQDhICpsJiL9yAw0
+fLgMbxh2WRdIknVpPP3b9E9J5cTFG0EYWPCoLSwbZntuOxDx3gaMDeDV7nA6BbLc
+PpEK8QULAkEAnLppphh4jOtywvzcLbZTBboGfxmV7LHFxCQ9FEqqYTS9smweoJpj
+9q2RQVVzvVEz02yrhJmyvqWpl9cvunjHuQJAIJFvsa+etkofgeRdF+dmiZB/7s7J
+T400SILCibVEzyMPOr97KUlHrTsZNiwzWlo9ZjuHwEs7TxmN85DVmNifWwJAZ4X2
+bQDy99o55rQRV5x8AGddDS1AS6UtRZ7OPY4INscYmjcyj9ELQJBrRuWD2sQ9YGUC
+ckb3u1g/yo0X+Kr4+QJAfr7kpYo201KCAmDTIzmCoxQ4C0wzHBDHMM2pcFenG3xU
+AlGX1jDMahL6YRpE/mT44PhTu7QRp2g73jT/67Pz5Q==
+-----END RSA PRIVATE KEY-----
+```
+### PKCS #1 （有密码）
+public.key
+```
+-----BEGIN PUBLIC KEY-----
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC9res4je9J6DAPQ4dqUWrt06zf
+wmDE42ICAnEOsIl+QUrmiCKVkPYilaj2KSCaHcBXX80oWI3pMcyGYa7rYSEoWdwG
+0A27YWaM+kHmpIQhzy8RteNAI3WA7YxvbLVX1LQysrTH8w+SyNL2jOw+Ohym2adI
+LIP6Ncajq4B8sDhZQwIDAQAB
+-----END PUBLIC KEY-----
+```
+private.key
+```
+-----BEGIN RSA PRIVATE KEY-----
+Proc-Type: 4,ENCRYPTED
+DEK-Info: DES-EDE3-CBC,D7CB89C02608D621
+
+vnz358He4XyN3lltTnqbPzPlrK/vZw8Bii8y6gIvk6DjPgLZ3FhW+SKeUTEP/2Q+
+C6WgFxFKoSdoIfYeWMzjaKbAOA4ko12zu6JOWXpTfOL5FhhGjtCK5CwqB2A73nza
+/aHnScqo5cy4Owks14Hz4hFy24AQhhmK0y9+vJOpH/Aw8jkOllIFGDiF3kJInupT
+P5lgAUNSD0DIJ4vwZp3XoCv1PMc0ySi/V1I0M6JISmHC2uwLk5Zoj9TI4D8lIuk5
+ARH/ui+iotvERCYmecNZNlWIIAxKdUQLqkFYizfJFfN/cjOvzfgBdqmMpUObhgLD
+HYBIbrLsnRAO+db/T9rdXcHGd3ggq4cJR0VxsY4gaqiB/e+N1gPkEljbymZIpJzZ
+tH2e5W9mtHuAimc5yXWumkcd1vxwahl33G5cMtwhqGCfLH5QXk9wPnADlJhZBSaT
+O1w6+ytfQjyqPBjbY3NlRhtqfN6B9GK3F/niWRqhgLwrC7YaMA8cG9TVgSKGOyUg
+sIuSsdiZtp5uQLHhyrRA3ByiI4C6dkmQgjnEvifuL/jta4q5xYOBMGmJ3LwXANZY
+ZjdVlmm6dpreBH1FS+6NJpyB1MZJD/Bo8RL39FDbSAVLTxC63DuZl73W4e5nepgq
+Y/2MjY8heMNA/UGIeYuCQcMMDhK680T9xJpmss++x7b2pFr6/53Alj1uzJ9VnrJn
+PMA6arU+o/hJIsTa0lcufa7GI/3UDjiL+hQzmBnJ4FP3nLoYLMusgI8wijS1R5E2
+M4QCEXIEhCh+jssD47U5ky/OgkXUvoPW5Ap/eDBeOLE=
+-----END RSA PRIVATE KEY-----
+```
+### PKCS #8 （无密码）
+public.key
+```
+-----BEGIN PUBLIC KEY-----
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANB8lcdxHiEuE7xna5GY+D9BbEMOsfXr
+J8+RNZ/R7zEH0UpwxNYM74o4FGNeRpwsOJn5OAUrja7tR9Mwr5nbJ28CAwEAAQ==
+-----END PUBLIC KEY-----
+```
+private.key
+```
+-----BEGIN PRIVATE KEY-----
+MIIBVQIBADANBgkqhkiG9w0BAQEFAASCAT8wggE7AgEAAkEA0HyVx3EeIS4TvGdr
+kZj4P0FsQw6x9esnz5E1n9HvMQfRSnDE1gzvijgUY15GnCw4mfk4BSuNru1H0zCv
+mdsnbwIDAQABAkApF3UZ8ySiG4fOSX/9GW5MYWOqL9pJgwi8s30jO+ht/CXtIvZL
+q9035edqHltvVSxSWCHMtnjGYrXJxmlOBpzBAiEA/7WEVaKCSaq3Q4aPBr+DbHNb
+jIDtaIXh40byyuJC0CECIQDQuVAsjs3gKjzUvyAeg1Ljvq1IzU84JkzFjStXZnBF
+jwIhAK+9H5r/Gg3o/xSweMHJg1hYm9Wfkgpg4RMjYp/fCs4hAiB336Y7IPz+XGO5
+b9c7jwKhCBavdDKmNeDrqIsW1B9w4wIhAKXG6HD9RX2W6lG6+UlL31w+x6feWgNB
+kqYEWDyt/Ykx
+-----END PRIVATE KEY-----
+```
+### PKCS #8 （有密码）
+public.key
+```
+-----BEGIN PUBLIC KEY-----
+MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKKutKzalBTTTEv4hTMrRFeteazwzGjc
+cGodYVMEq7t/7GAAwXhR8yZm0lXkeY19q/NO5iHUdTNX5UntMBbR65UCAwEAAQ==
+-----END PUBLIC KEY-----
+```
+private.key
+```
+-----BEGIN ENCRYPTED PRIVATE KEY-----
+MIIBpjBABgkqhkiG9w0BBQ0wMzAbBgkqhkiG9w0BBQwwDgQIu1z216U8a18CAggA
+MBQGCCqGSIb3DQMHBAjSFe718qJgDgSCAWBjkG6uy23joW1ramUmiVQBVrN1s44P
+EXjzOTak0rehIRn1PLcEf/tvxyEWnGrRYuPZEdG+Kt9plQM8zF1X0wpvJvSbGtrs
+3MYQ1EXynVG8MDFdR58jmj7nv023A4cX3SvMY3YzlAw/b1wSlXNiqQ0VgjnbGTHz
+O/O+PhQh01K1W5QLL7Beh+xyTWPx3kQeOKJEnztcp49VU29M4Ga9yKeJszPUDhNO
+bX51ZtP4Z2bjJ1qX6+s6NnLxNffRehuY1O0HQIeGm6dL1bDbYwSQD1ob8L8WEZP0
+z2Dou3dP9fUJKpEfXY7cPj7J4c+xcv/x8V/dfSIevubCB0io2ogZXfNXKKAX/RSY
++BePAldHvomt9ier2Y5UC2jc20l7UEkEno1jHn49C1aiV1i35Ga79OXt4geFgYQp
+Gm4F6GnQayHGbnBk0cSXvp2zE/IJa+MgNrhLC5sX9swr/JVGH5oLQ8VX
+-----END ENCRYPTED PRIVATE KEY-----
+```
