@@ -10,9 +10,6 @@
 key生成后，通过点击“Save private key”输出ppk文件，这是putty使用的key文件，其他软件无法使用。  
 可点击Conversions下拉菜单，选中Export OpenSSH key，输出OpenSSH key-gen格式的key。
 
-
-putty使用的key文件后缀名为 ppk 。在PuttyGen程序中通过点击“Save private key”生成。
-
 * 网上很多在线生成RSA密钥对的，如 `http://web.chacuo.net/netrsakeypair`
 
 ### key的转换
